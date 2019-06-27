@@ -37,52 +37,6 @@ app = Flask(__name__)
 # Flask Routes
 #################################################
 
-@app.route("/")
-def welcome():
-    """List all available api routes."""
-    return"""<html>
-    <h1>List of all available Honolulu, HI API routes</h1>
-    <ul>
-    <br>
-    <li>
-    Return a list of precipitations from last year:
-    <br>
-    <a href="/api/v1.0/precipitation">/api/v1.0/precipitation</a>
-    </li>
-    <br>
-    <li>
-    Return a JSON list of stations from the dataset: 
-    <br>
-   <a href="/api/v1.0/stations">/api/v1.0/stations</a>
-   </li>
-    <br>
-    <li>
-    Return a JSON list of Temperature Observations (tobs) for the previous year:
-    <br>
-    <a href="/api/v1.0/tobs">/api/v1.0/tobs</a>
-    </li>
-    <br>
-    <li>
-    Return a JSON list of tmin, tmax, tavg for the dates greater than or equal to the date provided:
-    <br>Replace &ltstart&gt with a date in Year-Month-Day format.
-    <br>
-    <a href="/api/v1.0/2017-01-01">/api/v1.0/2017-01-01</a>
-    </li>
-    <br>
-    <li>
-    Return a JSON list of tmin, tmax, tavg for the dates in range of start date and end date inclusive:
-    <br>
-    Replace &ltstart&gt and &ltend&gt with a date in Year-Month-Day format. 
-    <br>
-    <br>
-    <a href="/api/v1.0/2017-01-01/2017-01-07">/api/v1.0/2017-01-01/2017-01-07</a>
-    </li>
-    <br>
-    </ul>
-    </html>
-    """
-
-
 @app.route("/api/v1.0/precipitation")
 def precipitation():
     # Docstring 
@@ -166,3 +120,4 @@ def start_end(start=None, end=None):
 
 if __name__ == '__main__':
     app.run(debug=True)
+    #
